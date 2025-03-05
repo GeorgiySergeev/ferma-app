@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import Cart1 from '@/components/cart-1';
 import products from '@/utilities/products';
 import { useCart } from '@/context/CartContext';
@@ -46,23 +47,26 @@ function MainComponent() {
 
   return (
     <div className="min-h-scree bg-white  dark:bg-gray-900">
-      <section className="relative h-[80vh] min-h-[500px]">
+      <section className="relative h-[80vh] min-h-[500px] overflow-hidden">
         <img
           src="/images/hero/hero-farm.jpeg"
           alt="Сервіс турботи FERMA"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105 filter brightness-90"
           priority="true"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 flex items-center justify-center">
-          <div className="text-center text-white max-w-4xl px-4">
-            <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-[#2E7D32]/10 mix-blend-multiply"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white max-w-4xl px-4 z-10">
+            <h1 className="text-4xl uppercase md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
               Сервіс турботи <span className="text-green-400">FERMA</span>
             </h1>
-            <p className="hero__text text-xl md:text-3xl uppercase tracking-wider mb-8 opacity-90">
+            <p className="hero__text text-xl md:text-3xl uppercase tracking-wider mb-8 opacity-90 drop-shadow-md">
               Власне фермерське господарство
             </p>
-            <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 transform hover:scale-105">
-              Замовити зараз
+            <button className="uppercase bg-green-600 hover:bg-green-800 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <Link href="/about">про нас</Link>
+              <i className="fa-solid fa-arrow-right ml-3"></i>
             </button>
           </div>
         </div>
@@ -70,7 +74,7 @@ function MainComponent() {
 
       <main className="container mx-auto px-4 py-8">
         <section className="mb-8">
-          <h2 className="text-3xl font-bold mb-8">Наша продукція</h2>
+          <h2 className="text-3xl font-bold my-8">Наша продукція</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {products.map((product) => (
               <Product key={product.id} {...product} addToCart={addToCart} />
@@ -93,7 +97,7 @@ function MainComponent() {
             <div className="text-center">
               <i className="fas fa-leaf text-[#2E7D32] text-3xl mb-2"></i>
               <h3 className="font-semibold mb-2">Власна ферма</h3>
-              <p className="text-gray-600 dark:text-gray-400">Власна ферма, власне виробництво</p>
+              <p className="text-gray-600 dark:text-gray-400">Власне виробництво</p>
             </div>
           </div>
         </section>

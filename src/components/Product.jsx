@@ -3,10 +3,10 @@ export default function Product({ id, image, name, weight, option, price, addToC
   return (
     <div
       key={id}
-      className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow duration-300">
+      className=" dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-400 dark:border-gray-700 shadow-sm scale-95 hover:scale-120 transition-shadow duration-300">
       <div className="relative group">
-        <img src={image} alt={name} className="w-full h-48 object-contain mt-4 p-2" />
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        <img src={image} alt={name} className="w-full rounded-xl mt-4 p-2" />
+        {/* <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div> */}
       </div>
       <div className="p-5">
         <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">

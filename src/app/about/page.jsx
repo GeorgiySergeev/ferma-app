@@ -2,6 +2,7 @@
 import React from 'react';
 import { useCart } from '@/context/CartContext';
 import Cart1 from '@/components/cart-1';
+import Link from 'next/link';
 
 function MainComponent() {
   const { cartItems, setCartItems, isCartOpen, setIsCartOpen } = useCart();
@@ -21,6 +22,12 @@ function MainComponent() {
 
       <main className="container mx-auto px-4 py-12">
         <section className="mb-16">
+          <div>
+            <Link href="/" className=" dark:text-gray-300 hover:text-[#2E7D32] block mb-3">
+              <i className="fa-solid fa-house"></i>
+            </Link>
+          </div>
+
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Про нас</h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
