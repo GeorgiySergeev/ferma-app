@@ -46,21 +46,24 @@ function MainComponent() {
 
   return (
     <div className="min-h-scree bg-white  dark:bg-gray-900">
-      <section className="relative h-[500px]">
+      <section className="relative h-[80vh] min-h-[500px]">
         <img
           src="/images/hero/hero-farm.jpeg"
           alt="Сервіс турботи FERMA"
           className="w-full h-full object-cover"
+          priority="true"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h2 className="text-4xl md:text-6xl font-bold mb-4">
-              Сервіс турботи <span className="text-green-800">FERMA</span>
-            </h2>
-            <p className="hero__text text-2xl uppercase">Власне фермерське господарство</p>
-            {/* <button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white px-8 py-3 rounded-md">
-              Shop Now
-            </button> */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 flex items-center justify-center">
+          <div className="text-center text-white max-w-4xl px-4">
+            <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight">
+              Сервіс турботи <span className="text-green-400">FERMA</span>
+            </h1>
+            <p className="hero__text text-xl md:text-3xl uppercase tracking-wider mb-8 opacity-90">
+              Власне фермерське господарство
+            </p>
+            <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 transform hover:scale-105">
+              Замовити зараз
+            </button>
           </div>
         </div>
       </section>

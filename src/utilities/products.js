@@ -1,12 +1,10 @@
-// import milkImg from '../../public/images/products/img-1.png';
-
 const products = [
   {
     id: 1,
     name: 'Молоко',
     price: '95',
     weight: '1 л.',
-    option: 'жирність 3.5%',
+    option: '3.5%',
     image: '/images/products/img-1.png',
   },
   {
@@ -14,7 +12,7 @@ const products = [
     name: 'Кефір',
     price: 90,
     weight: '1 л.',
-    option: '',
+    option: '3.2%',
     image: '/images/products/img-2.png',
   },
   {
@@ -46,7 +44,7 @@ const products = [
     name: 'Творог',
     price: 350,
     weight: '1 кг.',
-    option: '',
+    option: '3%',
     image: '/images/products/img-6.png',
   },
   {
@@ -54,7 +52,7 @@ const products = [
     name: 'Сыр Косичка',
     price: 659,
     weight: '1 кг.',
-    option: '',
+    option: '45%',
 
     image: '/images/products/img-7.png',
   },
@@ -64,7 +62,7 @@ const products = [
     name: 'Сир Бринза',
     price: 659,
     weight: '1 кг.',
-    option: '',
+    option: '45%',
 
     image: '/images/products/img-8.png',
   },
@@ -73,7 +71,7 @@ const products = [
     name: 'Масло топлене',
     price: 280,
     weight: '200 г.',
-    option: '',
+    option: '82.5%',
 
     image: '/images/products/img-9.png',
   },
@@ -82,7 +80,7 @@ const products = [
     name: 'Масло класичне',
     price: 175,
     weight: '250 г.',
-    option: '',
+    option: '72.6%',
 
     image: '/images/products/img-10.png',
   },

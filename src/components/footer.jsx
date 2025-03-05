@@ -8,9 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">FERMA</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Ваш надійний постачальник свіжої фермерської продукції.
-            </p>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">Молочна продукція.</p>
             <div className="flex gap-4">
               <a href="#" className="text-gray-400 hover:text-[#2E7D32]">
                 <i className="fab fa-facebook"></i>
@@ -25,7 +23,7 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
-              Корисні посилання
+              Швидка навігація
             </h3>
             <ul className="space-y-2">
               <li>
@@ -37,10 +35,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-[#2E7D32]">
-                  Продукція
+                  Наша продукція
                 </Link>
               </li>
-              {/* Остальные ссылки */}
             </ul>
           </div>
           <div>
@@ -61,7 +58,7 @@ export default function Footer() {
         <div className="border-t border-gray-200 dark:border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-600 dark:text-gray-400 mb-4 md:mb-0">
-              © 2024 FERMA. Всі права захищені.
+              © {new Date().getFullYear()} FERMA. All rights reserved.
             </p>
           </div>
         </div>
