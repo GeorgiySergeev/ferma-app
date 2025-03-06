@@ -49,7 +49,8 @@ function MainComponent() {
     <div className="min-h-scree bg-white  dark:bg-gray-900">
       <section className="relative h-[80vh] min-h-[500px] overflow-hidden">
         <img
-          src="/images/hero/hero-farm.jpeg"
+          src="/images/hero/hero-farm.webp"
+          loading="lazy"
           alt="Сервіс турботи FERMA"
           className="w-full h-full object-cover scale-105 filter brightness-90"
           priority="true"
