@@ -1,8 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { validateCheckoutForm } from '@/utilities/validation';
 
 function Cart1({ items = [], onClose, onUpdateQuantity, onRemove, onCheckout }) {
   const [mounted, setMounted] = useState(false);
+  const [name, setName] = useState(''); // Changed initial value from true to ''
+  const [phone, setPhone] = useState('');
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     setMounted(true);
@@ -80,11 +84,40 @@ function Cart1({ items = [], onClose, onUpdateQuantity, onRemove, onCheckout }) 
                   </div>
                 </div>
 
-                <button
-                  onClick={() => onCheckout({ items, total })}
-                  className="w-full bg-[#2E7D32] hover:bg-[#1B5E20] text-white py-3 rounded-md font-semibold">
-                  Зробити замовлення
-                </button>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const validationErrors = validateCheckoutForm({ name, phone });
+                    if (validationErrors) {
+                      setErrors(validationErrors);
+                      return; // Stop execution
+                    }
+
+                    setErrors({});
+                    onCheckout({ validationErrors, items, total });
+                  }}>
+                  <input
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                    name="name"
+                    type="text"
+                    placeholder="Ім'я"
+                    className="w-full bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-md py-2 px-4 mb-2"
+                  />
+                  <input
+                    onChange={(e) => setPhone(e.target.value)}
+                    value={phone}
+                    name="tel"
+                    type="tel"
+                    placeholder="Номер телефону"
+                    className="w-full bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-md py-2 px-4 mb-2"
+                  />
+                  <button
+                    type="submit"
+                    className="w-full bg-[#2E7D32] hover:bg-[#1B5E20] text-white py-3 rounded-md font-semibold">
+                    Оформити замовлення
+                  </button>
+                </form>
               </div>
             </>
           )}
